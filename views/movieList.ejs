@@ -1,11 +1,16 @@
 <% include partials/header %>
 
-<% movieData.forEach(function (movie){ %>
 <div class="container">
-    <div class="movie-area">
-        <img src="<%=movie.image%>" alt="<%=movie.name%>" height="300px" />
+    <div class="row movie-list">
+        <% movieData.forEach(function (movie){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%=movie.image%>" alt="<%=movie.name%>" width="250px" />
+                </div>
+            </div>
+        <% }) %>
     </div>
 </div>
-<% }) %>
+
 
 <% include partials/footer %>

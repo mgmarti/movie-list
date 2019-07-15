@@ -4,7 +4,7 @@ const movies = [{
 },
 {
     name: 'The Descent 2',
-    image: 'https://images-na.ssl-images-amazon.com/images/I/51j7D3acxzL._SY445_.jpg'
+    image: 'https://image.tmdb.org/t/p/original/xqJjxn3TVU1p7gk89yc4SyWbp95.jpg'
 },
 {
     name: 'The Conjuring',
@@ -20,7 +20,7 @@ const movies = [{
 },
 {
     name: 'Indigenous',
-    image: 'https://thefilmstage.com/wp-content/uploads/2015/12/Indigenous-poster.jpg'
+    image: 'https://m.media-amazon.com/images/M/MV5BMjA4Mjk5MzMyOF5BMl5BanBnXkFtZTgwNjI4MzQ0NzE@._V1_UY268_CR9,0,182,268_AL_.jpg'
 },
 {
     name: 'IT',
