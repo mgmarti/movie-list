@@ -1,0 +1,11 @@
+<% include partials/header %>
+
+<% movieData.forEach(function (movie){ %>
+<div class="container">
+    <div class="movie-area">
+        <img src="<%=movie.image%>" alt="<%=movie.name%>" height="300px" />
+    </div>
+</div>
+<% }) %>
+
+<% include partials/footer %>
