@@ -8,3 +8,13 @@
     margin-top: 20px;
 }
 
+.form {
+    margin: 0 auto;
+    width: 30%;
+}
+
+#submit {
+        background-color: teal;
+        color: white;
+}
+
