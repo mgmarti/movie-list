@@ -23,10 +23,14 @@ app.use(movieRoutes);
 // require("./controllers/apiRoutes")(app);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/movie-list', {
+// mongoose.connect('mongodb://localhost:27017/movie-list', {
+//     useNewUrlParser: true
+// });
+
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/movie-list", {
     useNewUrlParser: true
 });
-
 
 // Start our server so that it can begin listening to client requests.
 // ===================================================================

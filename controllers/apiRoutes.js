@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
+//Pre database Code
 const movies = require("../data/movieData");
-const db = require('../models');
 
 module.exports = function (app) {
 
@@ -10,20 +9,9 @@ module.exports = function (app) {
 
     app.get("/movies", function (req, res) {
         //movieData = what you want to call | movies = data being passed in
-        // res.render("movieList", {
-        //     movieData: movies
-        // });
-
-        //Find all movies
-        db.Movie.find({}, function (err, allMovies) {
-            if (err) {
-                console.log(err)
-            } else {
-                res.render("movieList", {
-                    movieData: allMovies
-                })
-            }
-        })
+        res.render("movieList", {
+            movieData: movies
+        });
     });
 
     app.post("/movies", function (req, res) {
@@ -34,17 +22,8 @@ module.exports = function (app) {
             image: image
         };
 
-        //Create a new campground and save to DB
-        db.Movie.create(newMovie, function (err, newMovie) {
-            if (err) {
-                console.log(err)
-            } else {
-                res.redirect("/movies")
-            }
-        })
+        movies.push(newMovie);
 
-        // movies.push(newMovie);
-
-        // res.redirect("/movies")
+        res.redirect("/movies")
     });
 }

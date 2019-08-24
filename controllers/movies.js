@@ -21,7 +21,7 @@ router.get("/movies", function (req, res) {
                 movieData: allMovies
             })
         }
-    })
+    });
 });
 
 router.post("/movies", function (req, res) {
@@ -33,17 +33,13 @@ router.post("/movies", function (req, res) {
     };
 
     //Create a new campground and save to DB
-    Movie.create(newMovie, function (err, newMovie) {
+    Movie.create(newMovie, function (err, newMovieAdded) {
         if (err) {
             console.log(err)
         } else {
             res.redirect("/movies")
         }
-    })
-
-    // movies.push(newMovie);
-
-    // res.redirect("/movies")
+    });
 });
 
 module.exports = router;
