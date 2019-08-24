@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 
+const movieRoutes = require('./controllers/movies');
+
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
@@ -16,10 +18,15 @@ app.use(express.json());
 
 app.set("view engine", "ejs");
 
-require("./controllers/apiRoutes")(app);
+app.use(movieRoutes);
+
+// require("./controllers/apiRoutes")(app);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/movie-list', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/movie-list', {
+    useNewUrlParser: true
+});
+
 
 // Start our server so that it can begin listening to client requests.
 // ===================================================================
